@@ -240,6 +240,23 @@ function show_menu() {
   echo "" # Newline for spacing
 }
 
+# --- Main Menu Logic ---
+function show_menu() {
+  clear_screen
+  display_message "Welcome to GitGrabber437!"
+  print_divider
+  display_message "GitHub Repository: ${REPO_USER}/${REPO_NAME}"
+  print_divider
+  echo "Please choose an option:"
+  echo "  01. Fetch Specific File Content"
+  echo "  02. View Repository Tree"
+  echo "  03. Fetch Content of All Files (excluding LICENSE)"
+  echo "  XX. Exit"
+  print_divider
+  read -p "Enter your choice: " choice
+  echo "" # Newline for spacing
+} # <-- The 'EOF' marker should not be here.
+
 # --- Main Script Execution ---
 function main() {
   clear_screen
