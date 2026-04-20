@@ -5,63 +5,16 @@
 
 __version__="1.0.0"
 
-## DEFAULT HOST & PORT
-HOST='127.0.0.1'
-PORT='8080' 
-
-## ANSI Colors (Foreground + Background)
-# Standard Colors
-BLACK="$(printf '\033[30m')"   RED="$(printf '\033[31m')"     GREEN="$(printf '\033[32m')"  
-YELLOW="$(printf '\033[33m')"  BLUE="$(printf '\033[34m')"    MAGENTA="$(printf '\033[35m')"  
-CYAN="$(printf '\033[36m')"    WHITE="$(printf '\033[37m')"   ORANGE="$(printf '\033[38;5;208m')"
-
-# Bright Colors
-BRIGHT_BLACK="$(printf '\033[90m')"   BRIGHT_RED="$(printf '\033[91m')"    
-BRIGHT_GREEN="$(printf '\033[92m')"   BRIGHT_YELLOW="$(printf '\033[93m')"  
-BRIGHT_BLUE="$(printf '\033[94m')"    BRIGHT_MAGENTA="$(printf '\033[95m')"  
-BRIGHT_CYAN="$(printf '\033[96m')"    BRIGHT_WHITE="$(printf '\033[97m')"
-
-# Background Colors
-BLACKBG="$(printf '\033[40m')"   REDBG="$(printf '\033[41m')"     GREENBG="$(printf '\033[42m')"  
-YELLOWBG="$(printf '\033[43m')"  BLUEBG="$(printf '\033[44m')"    MAGENTABG="$(printf '\033[45m')"  
-CYANBG="$(printf '\033[46m')"    WHITEBG="$(printf '\033[47m')"
-
-# Bright Background Colors
-BRIGHT_BLACKBG="$(printf '\033[100m')"   BRIGHT_REDBG="$(printf '\033[101m')"    
-BRIGHT_GREENBG="$(printf '\033[102m')"   BRIGHT_YELLOWBG="$(printf '\033[103m')"  
-BRIGHT_BLUEBG="$(printf '\033[104m')"    BRIGHT_MAGENTABG="$(printf '\033[105m')"  
-BRIGHT_CYANBG="$(printf '\033[106m')"    BRIGHT_WHITEBG="$(printf '\033[107m')"
-
-# Text Effects
-BOLD="$(printf '\033[1m')"
-DIM="$(printf '\033[2m')"
-ITALIC="$(printf '\033[3m')"
-UNDERLINE="$(printf '\033[4m')"
-INVERT="$(printf '\033[7m')"
-HIDDEN="$(printf '\033[8m')"
-STRIKE="$(printf '\033[9m')"
-
-# Reset
-RESET="$(printf '\033[0m')"
-RESETBG="$(printf '\033[49m')"
-
-
-## Reset terminal colors
-reset_color() {
-	tput sgr0   # reset attributes
-	tput op     # reset color
-	return
-}
 
 ## Banner
 banner() {
     cat << EOF
- ${CYAN}    _______ __  ______           __    __              __ __ __________
- ${CYAN}   / ____(_) /_/ ____/________ _/ /_  / /_  ___  _____/ // /|__  /__  /
- ${CYAN}  / / __/ / __/ / __/ ___/ __ `/ __ \/ __ \/ _ \/ ___/ // /_ /_ <  / / 
- ${CYAN} / /_/ / / /_/ /_/ / /  / /_/ / /_/ / /_/ /  __/ /  /__  __/__/ / / /  
- ${CYAN} \____/_/\__/\____/_/   \__,_/_.___/_.___/\___/_/     /_/ /____/ /_/   
- ${CYAN}     ${RED}Tool created by Render${CYAN}                ${RED}Version: ${__version__}                                                                         
+    _______ __  ______           __    __              __ __ __________
+   / ____(_) /_/ ____/________ _/ /_  / /_  ___  _____/ // /|__  /__  /
+  / / __/ / __/ / __/ ___/ __ `/ __ \/ __ \/ _ \/ ___/ // /_ /_ <  / / 
+ / /_/ / / /_/ /_/ / /  / /_/ / /_/ / /_/ /  __/ /  /__  __/__/ / / /  
+ \____/_/\__/\____/_/   \__,_/_.___/_.___/\___/_/     /_/ /____/ /_/   
+     Tool created by Render                Version: ${__version__}                                                                         
                                                                       
 EOF
 }
@@ -69,12 +22,13 @@ EOF
 ## Small Banner
 banner_small() {
 	cat <<- EOF
-		 ${BLUE} ░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀█░█▀▄░█▀▄░█▀▀░█▀▄░█░█░▀▀█░▀▀█
-		 ${BLUE} ░█░█░░█░░░█░░█░█░█▀▄░█▀█░█▀▄░█▀▄░█▀▀░█▀▄░░▀█░░▀▄░▄▀░
-		 ${BLUE} ░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀░▀░▀▀░░▀▀░░▀▀▀░▀░▀░░░▀░▀▀░░▀░░
- 		 ${BLUE}					${RED}Version ${__version__}
+		  ░█▀▀░▀█▀░▀█▀░█▀▀░█▀▄░█▀█░█▀▄░█▀▄░█▀▀░█▀▄░█░█░▀▀█░▀▀█
+		  ░█░█░░█░░░█░░█░█░█▀▄░█▀█░█▀▄░█▀▄░█▀▀░█▀▄░░▀█░░▀▄░▄▀░
+		  ░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀░▀░▀▀░░▀▀░░▀▀▀░▀░▀░░░▀░▀▀░░▀░░
+            Tool created by Render                Version: ${__version__}                                                                         
 	EOF
 }
+
 
 # Global variables
 REPO_URL=""
